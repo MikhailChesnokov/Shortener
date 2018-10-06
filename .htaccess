@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^[a-zA-Z0-9\/_]*$
+#RewriteCond %{QUERY_STRING} ^$
+#RewriteCond %{PATH_INFO} ^[a-zA-Z0-9\/_]*$
+#RewriteCond %{REQUEST_METHOD} 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^[a-zA-Z0-9\/]*$ index.php [L]
+RewriteRule ^_[a-zA-Z0-9]+$ redirector.php [L]
